@@ -14,7 +14,7 @@ var D2=parseFloat(D2_gad);
 if (D2 >= D1) {
     alert("D2 nie może być większe lub równe D1");
 }
-if (D1 < 1 || D1 > 31 || D2 < 1 || D2 > 31) {
+if (D1 <= 1 || D1 >= 31 || D2 <= 1 || D2 >= 31) {
     alert("Podaj dni z zakresu 1–31!");
 }
 suma = (D2 - D1) * 86400;
