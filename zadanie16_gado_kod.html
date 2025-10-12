@@ -1,1 +1,32 @@
-
+<!DOCTYPE html>
+<head>
+    <META HTTP-EQUIV="content-type" CONTENT="text/html">
+    <meta charset="utf-8">
+</head>
+<body>
+    <textarea cols="120" rows="22">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Gadomska - Zadanie 16</title>
+</head>
+<body>
+<div style="color:navy; font-size:30px;">
+<script language="JavaScript">
+var A_gad = parseInt(prompt("Podaj liczbę (A):", ""));
+var B_gad = parseInt(prompt("Podaj liczbę (B):", ""));
+var wynik = Math.pow(A_gad + B_gad, 3);
+var cz1 = Math.pow(A_gad, 3);
+var cz2 = 3 * Math.pow(A_gad, 2) * B_gad;
+var cz3 = 3 * A_gad * Math.pow(B_gad, 2);
+var cz4 = Math.pow(B_gad, 3);
+document.write("Wczytane liczby: A=" + A_gad + " , B=" + B_gad + "<br><br>");
+document.write("<div style='width:100%; font-size:40px;'>(" + A_gad + " + " + B_gad + ")³ = " + A_gad + "³ + 3*(" + A_gad + ")²*" + B_gad + " + 3*" + A_gad + "*(" + B_gad + ")² + " + B_gad + "³ = " + cz1 + " + " + cz2 + " + " + cz3 + " + " + cz4 + " = " + wynik + "</div>");
+</script>
+</div>
+</body>
+</html>
+    </textarea>
+</body>
+</html>
