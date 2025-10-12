@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Gadomska - Zadanie 15</title>
+</head>
+<body>
+<div style="color:green; font-size:28px;">
+<script language="JavaScript">
+var m_gad = parseInt(prompt("Podaj wartość m:", ""));
+var ulamek = 1 / (2 * m_gad);
+document.write("<h2>Rozkład ułamka egipskiego na dwa takie same ułamki</h2>");
+document.write("Dla m = " + m_gad + "<br><br>");
+document.write("1/" + m_gad + " = 1/" + (2 * m_gad) + " + 1/" + (2 * m_gad) + "<br><br>");
+document.write("Sprawdzenie:<br>");
+document.write("1/" + m_gad + " = " + (1 / m_gad).toFixed(5) + "<br>");
+document.write("1/" + (2 * m_gad) + " + 1/" + (2 * m_gad) + " = " + (2 * ulamek).toFixed(5));
+</script>
+</div>
+</body>
+</html>
