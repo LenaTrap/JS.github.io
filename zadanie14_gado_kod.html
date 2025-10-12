@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <META HTTP-EQUIV="content-type" CONTENT="text/html">
+    <meta charset="utf-8">
+</head>
+<body>
+    <textarea cols="120" rows="39">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Gadomska - Zadanie 14</title>
+</head>
+<body>
+<div style="color:green; font-size:28px;">
+<script language="JavaScript">
+    
+    
+    var m_gad = parseInt(prompt("Podaj wartość m (liczba naturalna większa od 0):", ""));
 
+    var ulamek1 = 1 / (m_gad + 1);
+    var ulamek2 = 1 / (m_gad * (m_gad + 1));
+
+    
+    var a = m_gad * (m_gad + 1);
+    var ulamek2a = 1 / (a + 1);
+    var ulamek2b = 1 / (a * (a + 1));
+
+    
+    document.write("<h2>Rozkład ułamka egipskiego na trzy ułamki</h2>");
+    document.write("Dla m = " + m_gad + "<br>");
+    document.write("Mamy:<br>");
+    document.write("1/" + m_gad + " = 1/" + (m_gad + 1) + " + 1/" + (a + 1) + " + 1/" + (a * (a + 1)) + "<br><br>");
+
+    
+    var suma = (1 / (m_gad + 1)) + (1 / (a + 1)) + (1 / (a * (a + 1)));
+    document.write("Wartości dziesiętne:<br>");
+    document.write("1/" + m_gad + " = " + (1 / m_gad).toFixed(5) + "<br>");
+    document.write("1/" + (m_gad + 1) + " = " + (1 / (m_gad + 1)).toFixed(5) + "<br>");
+    document.write("1/" + (a + 1) + " = " + ulamek2a.toFixed(5) + "<br>");
+    document.write("1/" + (a * (a + 1)) + " = " + ulamek2b.toFixed(5) + "<br>");
+    document.write("<br>Sprawdzenie: " + suma.toFixed(5) + " ≈ " + (1 / m_gad).toFixed(5));
+</script>
+</div>
+ </body>
+</html>
+    </textarea>
+</body>
+</html>
