@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 20 - Kowalski</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Zadanie 20 – Kowalski</h2>
+    <p>Wczytaj współrzędne trzech punktów trójkąta:</p>
+ 
+    <p>
+      A(xa_kow, ya_kow):
+      <input type="number" id="xa_kow" placeholder="xa">
+      <input type="number" id="ya_kow" placeholder="ya">
+    </p>
+    <p>
+      B(xb_kow, yb_kow):
+      <input type="number" id="xb_kow" placeholder="xb">
+      <input type="number" id="yb_kow" placeholder="yb">
+    </p>
+    <p>
+      C(xc_kow, yc_kow):
+      <input type="number" id="xc_kow" placeholder="xc">
+      <input type="number" id="yc_kow" placeholder="yc">
+    </p>
+ 
+    <button onclick="oblicz()">Oblicz długości boków</button>
+ 
+    <div id="wynik"></div>
+  </div>
+ 
+  <script>
+    // --- Funkcje do obliczania długości boków ---
+    function AB_kry(xa_kow, ya_kow, xb_kow, yb_kow) {
+      return Math.sqrt(Math.pow(xb_kow - xa_kow, 2) + Math.pow(yb_kow - ya_kow, 2));
+    }
+ 
+    function BC_kry(xb_kow, yb_kow, xc_kow, yc_kow) {
+      return Math.sqrt(Math.pow(xc_kow - xb_kow, 2) + Math.pow(yc_kow - yb_kow, 2));
+    }
+ 
+    function AC_kry(xa_kow, ya_kow, xc_kow, yc_kow) {
+      return Math.sqrt(Math.pow(xc_kow - xa_kow, 2) + Math.pow(yc_kow - ya_kow, 2));
+    }
+ 
+    function oblicz() {
+      var xa_kow = parseFloat(document.getElementById("xa_kow").value);
+      var ya_kow = parseFloat(document.getElementById("ya_kow").value);
+      var xb_kow = parseFloat(document.getElementById("xb_kow").value);
+      var yb_kow = parseFloat(document.getElementById("yb_kow").value);
+      var xc_kow = parseFloat(document.getElementById("xc_kow").value);
+      var yc_kow = parseFloat(document.getElementById("yc_kow").value);
+ 
+      if (isNaN(xa_kow) || isNaN(ya_kow) || isNaN(xb_kow) || isNaN(yb_kow) || isNaN(xc_kow) || isNaN(yc_kow)) {
+        document.getElementById("wynik").innerHTML = "❌ Proszę wprowadzić wszystkie współrzędne liczbowe!";
+        return;
+      }
+ 
+      var ab = AB_kry(xa_kow, ya_kow, xb_kow, yb_kow);
+      var bc = BC_kry(xb_kow, yb_kow, xc_kow, yc_kow);
+      var ac = AC_kry(xa_kow, ya_kow, xc_kow, yc_kow);
+ 
+      document.getElementById("wynik").innerHTML = `
+        Długości boków trójkąta:<br>
+        AB = ${ab.toFixed(2)}<br>
+        BC = ${bc.toFixed(2)}<br>
+        AC = ${ac.toFixed(2)}
+      `;
+    }
+  </script>
+</body>
+</html>
