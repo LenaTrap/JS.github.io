@@ -6,23 +6,22 @@
 </head>
 <body>
   <div class="container">
-    <h2>Zadanie 20 – Kowalski</h2>
     <p>Wczytaj współrzędne trzech punktów trójkąta:</p>
  
     <p>
-      A(xa_kow, ya_kow):
-      <input type="number" id="xa_kow" placeholder="xa">
-      <input type="number" id="ya_kow" placeholder="ya">
+      A(xa_gad, ya_gad):
+      <input type="number" id="xa_gad" placeholder="xa">
+      <input type="number" id="ya_gad" placeholder="ya">
     </p>
     <p>
-      B(xb_kow, yb_kow):
-      <input type="number" id="xb_kow" placeholder="xb">
-      <input type="number" id="yb_kow" placeholder="yb">
+      B(xb_gad, yb_gad):
+      <input type="number" id="xb_gad" placeholder="xb">
+      <input type="number" id="yb_gad" placeholder="yb">
     </p>
     <p>
-      C(xc_kow, yc_kow):
-      <input type="number" id="xc_kow" placeholder="xc">
-      <input type="number" id="yc_kow" placeholder="yc">
+      C(xc_gad, yc_gad):
+      <input type="number" id="xc_gad" placeholder="xc">
+      <input type="number" id="yc_gad" placeholder="yc">
     </p>
  
     <button onclick="oblicz()">Oblicz długości boków</button>
@@ -31,35 +30,34 @@
   </div>
  
   <script>
-    // --- Funkcje do obliczania długości boków ---
-    function AB_kry(xa_kow, ya_kow, xb_kow, yb_kow) {
-      return Math.sqrt(Math.pow(xb_kow - xa_kow, 2) + Math.pow(yb_kow - ya_kow, 2));
+    function AB_kry(xa_gad, ya_gad, xb_gad, yb_gad) {
+      return Math.sqrt(Math.pow(xb_gad - xa_gad, 2) + Math.pow(yb_gad - ya_gad, 2));
     }
  
-    function BC_kry(xb_kow, yb_kow, xc_kow, yc_kow) {
-      return Math.sqrt(Math.pow(xc_kow - xb_kow, 2) + Math.pow(yc_kow - yb_kow, 2));
+    function BC_kry(xb_gad, yb_gad, xc_gad, yc_gad) {
+      return Math.sqrt(Math.pow(xc_gad - xb_gad, 2) + Math.pow(yc_gad - yb_gad, 2));
     }
  
-    function AC_kry(xa_kow, ya_kow, xc_kow, yc_kow) {
-      return Math.sqrt(Math.pow(xc_kow - xa_kow, 2) + Math.pow(yc_kow - ya_kow, 2));
+    function AC_kry(xa_gad, ya_gad, xc_gad, yc_gad) {
+      return Math.sqrt(Math.pow(xc_gad - xa_gad, 2) + Math.pow(yc_gad - ya_gad, 2));
     }
  
     function oblicz() {
-      var xa_kow = parseFloat(document.getElementById("xa_kow").value);
-      var ya_kow = parseFloat(document.getElementById("ya_kow").value);
-      var xb_kow = parseFloat(document.getElementById("xb_kow").value);
-      var yb_kow = parseFloat(document.getElementById("yb_kow").value);
-      var xc_kow = parseFloat(document.getElementById("xc_kow").value);
-      var yc_kow = parseFloat(document.getElementById("yc_kow").value);
+      var xa_gad = parseFloat(document.getElementById("xa_gad").value);
+      var ya_gad = parseFloat(document.getElementById("ya_gad").value);
+      var xb_gad = parseFloat(document.getElementById("xb_gad").value);
+      var yb_gad = parseFloat(document.getElementById("yb_gad").value);
+      var xc_gad = parseFloat(document.getElementById("xc_gad").value);
+      var yc_gad = parseFloat(document.getElementById("yc_gad").value);
  
-      if (isNaN(xa_kow) || isNaN(ya_kow) || isNaN(xb_kow) || isNaN(yb_kow) || isNaN(xc_kow) || isNaN(yc_kow)) {
-        document.getElementById("wynik").innerHTML = "❌ Proszę wprowadzić wszystkie współrzędne liczbowe!";
+      if (isNaN(xa_gad) || isNaN(ya_gad) || isNaN(xb_gad) || isNaN(yb_gad) || isNaN(xc_gad) || isNaN(yc_gad)) {
+        document.getElementById("wynik").innerHTML = "Proszę wprowadzić wszystkie współrzędne liczbowe";
         return;
       }
  
-      var ab = AB_kry(xa_kow, ya_kow, xb_kow, yb_kow);
-      var bc = BC_kry(xb_kow, yb_kow, xc_kow, yc_kow);
-      var ac = AC_kry(xa_kow, ya_kow, xc_kow, yc_kow);
+      var ab = AB_kry(xa_gad, ya_gad, xb_gad, yb_gad);
+      var bc = BC_kry(xb_gad, yb_gad, xc_gad, yc_gad);
+      var ac = AC_kry(xa_gad, ya_gad, xc_gad, yc_gad);
  
       document.getElementById("wynik").innerHTML = `
         Długości boków trójkąta:<br>
