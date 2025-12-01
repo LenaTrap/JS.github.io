@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Zadanie 22</title>
+<meta charset="UTF-8">
+<script language="JavaScript">
+
+function Pole_gado(a_gado, b_gado) {
+  a_gado = parseFloat(a_gado);
+  b_gado = parseFloat(b_gado);
+  var pole_wynik = a_gado * b_gado;
+
+  document.getElementsByName('pole')[0].value = pole_wynik.toFixed(2);
+  alert("Pole = " + pole_wynik.toFixed(2) + " cm^2");
+  wyprowadz_pole_gado.innerHTML = "Pole = " + pole_wynik.toFixed(2) + " cm^2";
+}
+
+function obwod_gado(a_gado, b_gado) {
+  a_gado = parseFloat(a_gado);
+  b_gado = parseFloat(b_gado);
+  var obwod_wynik = 2 * a_gado + 2 * b_gado;
+
+  document.getElementsByName('obw')[0].value = obwod_wynik.toFixed(2);
+  alert("Obwód = " + obwod_wynik.toFixed(2) + " cm");
+  wyprowadz_obwod_gado.innerHTML = "Obwód = " + obwod_wynik.toFixed(2) + " cm";
+}
+
+function okno_zamknij_gado() {
+  window.close();
+}
+
+</script>
+</head>
+<body>
+<h3>Obliczanie pola oraz obwodu prostokąta</h3>
+
+<form name="formularz" action="..." 
+      onsubmit="Pole_nark(this.a_dana_gado.value,this.b_dana_gado.value);
+                obwod_nark(this.a_dana_gado.value,this.b_dana_gado.value);
+                return false">
+
+Podaj a = <input size="6" name="a_dana_gado">
+Podaj b = <input size="6" name="b_dana_gado">
+<br><br>
+
+<input type="submit" value="Oblicz">
+<br><br>
+
+Pole = <input size="6" name="pole">
+Obwód = <input size="6" name="obw">
+</form>
+
+<table>
+<tr id="wyprowadz_pole_gado"></tr>
+<tr id="wyprowadz_obwod_gado"></tr>
+</table>
+
+<br>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_gado()"/>
+</body>
+</html>
