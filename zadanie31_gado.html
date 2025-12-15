@@ -1,0 +1,32 @@
+<html> 
+  <head> 
+    <script type="text/javascript"> 
+      var wazon = 
+      {
+        kolor: 'Sinokoperkowy', 
+        tworca: 'Marek', 
+        pochodzenie: 'Francja',  
+        pokaz: function () 
+        { 
+          document.write(this.kolor + ' wazon stworzony w ' + this.pochodzenie + ' przez ' + this.tworca) 
+        } 
+      } 
+      wazon.pokaz(); 
+      wazon.rok=1960; 
+      wazon.wyswietl_gadomska=function() {alert('z roku ' + this.rok +)} 
+      wazon.wyswietl_gadomska(); 
+    </script> 
+  </head> 
+  <body> 
+    <br> 
+    Programowanie obiektowe. <br> 
+    Obiekt  to  wazon<br> 
+    Pola:<br> 
+    kolor<br> 
+    tworca<br> 
+    pochodzenie<br> 
+    metoda:  pokaz<br> 
+    nowe pole to rok <br> 
+    nowa metoda: wyswietl_gadomska();<br> 
+  </body> 
+</html> 
