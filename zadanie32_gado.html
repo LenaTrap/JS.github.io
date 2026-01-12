@@ -19,7 +19,7 @@ function Klient(nazwisko_k, imie_k, zawód)
 /* ===============================
    METODA DODANA PRZEZ PROTOTYPE
    =============================== */
-Uczen.prototype.wypisz = function()
+Klient.prototype.wypisz = function()
 {
     document.write(
         this.nazwisko + " " +
@@ -31,9 +31,9 @@ Uczen.prototype.wypisz = function()
 /* ===============================
    POWOŁANIE OBIEKTÓW
    =============================== */
-var uczen1 = new Uczen("Gadomska", "Lena", "Uczeń");
-var uczen2 = new Uczen("Ostrowska", "Julia", "Żółw ninja");
-var uczen3 = new Uczen("DrzewoBarszcz", "Grzesiu", "Drzewo");
+var osoba1 = new Klient("Gadomska", "Lena", "Uczeń");
+var osoba2 = new Klient("Ostrowska", "Julia", "Żółw ninja");
+var osoba3 = new Klient("DrzewoBarszcz", "Grzesiu", "Drzewo");
 
 /* ===============================
    DOSTĘP DO WŁAŚCIWOŚCI
