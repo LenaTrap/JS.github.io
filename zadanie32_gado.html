@@ -1,27 +1,82 @@
-<html> 
-     <head> 
-           <script type="text/javascript"> 
-              function klient(nazwisko_g,imie_g,zawod_g)//początek konstruktora 
-  { 
-   this.nazwisko=nazwisko_g; 
-   this.imie=imie_g; 
-   this.zawod=zawod_g;   
-  }//koniec konstruktora 
-              klient.prototype.wypisz = function () //definicja metody 
-      { 
-         alert(this.nazwisko + ' ' + this.imie+ ' ' + this.zawod); 
-      }; 
-  var osoba1 = new klient("Gadomska", "Lena", "uczeń"); // nowy obiekt osoba1 
-  var osoba2 = new klient('Ostrowska', 'Julia', 'żółw ninja'); 
-  osoba1.wypisz(); // uruchomienie metody wypisz() dotyczącej osoby 1 
-  osoba2.wypisz(); 
-                document.write("dostęp do właściwości"+"<br>"); 
-// poniżej dostęp do pól osoby1 
-     document.write("klient pierwszy"+"   "+osoba1.nazwisko+"   "+osoba1.imie+"   "+osoba1.zawod); 
-            </script> 
-     </head> 
-<body> 
- <br> 
-   programowanie obiektowe   
-</body> 
-</html> 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Programowanie obiektowe JS</title>
+
+<script type="text/javascript">
+
+/* ===============================
+   DEFINICJA KONSTRUKTORA
+   =============================== */
+function Klient(nazwisko_k, imie_k, zawód)
+{
+     this.nazwisko=nazwisko_k; 
+     this.imie=imie_k; 
+     this.zawod=zawod_k;  
+}
+
+/* ===============================
+   METODA DODANA PRZEZ PROTOTYPE
+   =============================== */
+Uczen.prototype.wypisz = function()
+{
+    document.write(
+        this.nazwisko + " " +
+        this.imie + ", zawód: " +
+        this.zawód + " "
+    );
+};
+
+/* ===============================
+   POWOŁANIE OBIEKTÓW
+   =============================== */
+var uczen1 = new Uczen("Gadomska", "Lena", "Uczeń");
+var uczen2 = new Uczen("Ostrowska", "Julia", "Żółw ninja");
+var uczen3 = new Uczen("DrzewoBarszcz", "Grzesiu", "Drzewo");
+
+/* ===============================
+   DOSTĘP DO WŁAŚCIWOŚCI
+   =============================== */
+document.write("<b>Dostęp do pól obiektów:</b><br>");
+document.write("klient pierwszy"+"   "+osoba1.nazwisko+"   "+osoba1.imie+"   "+osoba1.zawod)
+document.write("klient drugi"+"   "+osoba2.nazwisko+"   "+osoba2.imie+"   "+osoba2.zawod)
+document.write("klient trzeci"+"   "+osoba3.nazwisko+"   "+osoba3.imie+"   "+osoba3.zawod)
+
+/* ===============================
+   UŻYCIE METODY PROTOTYPOWEJ
+   =============================== */
+document.write("<b>Wyświetlanie danych metodą wypisz():</b><br>");
+osoba1.wypisz();
+osoba2.wypisz();
+osoba3.wypisz();
+
+/* ===============================
+   DODANIE WŁAŚCIWOŚCI POZA CIAŁEM OBIEKTU
+   =============================== */
+osoba2.auto = "Ford";
+
+/* ===============================
+   DODANIE METODY POZA CIAŁEM OBIEKTU
+   =============================== */
+osoba2.osoba_pokaz_nazwisko_osoby = function()
+{
+    document.write("<br>Nazwisko osoby: " + this.nazwisko + "<br>");
+};
+
+/* ===============================
+   UŻYCIE DODANEJ METODY
+   =============================== */
+osoba2.osoba_pokaz_nazwisko_osoby();
+
+</script>
+</head>
+
+<body>
+<br>
+<b>Programowanie obiektowe – JavaScript</b>
+</body>
+</html>
+ 
+   
+ 
