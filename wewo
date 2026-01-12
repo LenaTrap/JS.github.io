@@ -1,0 +1,169 @@
+2)Na podstawie Przykładu3 (poniżej), uzupełnij program z dwóch zadań poprzednich z użyciem 
+programowania obiektowego. 
+Program powinien zawierać: 
+53 
+ 54 
+ Definiowanie konstruktora (klasy). Należy zauważyć, że w JS w wersji przed 2015 niema 
+możliwości definiowania klasy ( tak jak w innych językach obiektowych). Dlatego 
+definiowanie klasy odbywa się z użyciem konstruktora ( słowo kluczowe function).   
+ dodawanie metody do konstruktora z użyciem prototypu, (z czterema polami), 
+ powoływanie obiektów, (powołanie 3 obiektów), 
+ dostęp do właściwości (pól) obiektów, (wyświetlenie danych o wszystkich obiektach), 
+ użycie zdefiniowanej metody. (wyświetlenie danych o wszystkich obiektach). 
+ 
+Dopisz jedną właściwość (poza ciałem obiektu) z wpisaną daną, jedną metodę wyświetlającą wartości 
+pola właściwości (dopisaną w zadaniu 2??), nazwa metody to nazwa obiekt_pokaz_nazwisko_ucznia  
+np.   samochod_pokaz_kowalski ( metoda dopisana poza ciałem obiektu). 
+ 
+Przykład 3 
+Temat: Definiowanie konstruktora, dodawanie metody do konstruktora z użyciem prototypu, 
+powoływanie obiektów, dostęp do właściwości (pól) obiektów, użycie zdefiniowanej metody. 
+ 
+<html> 
+     <head> 
+           <script type="text/javascript"> 
+              function klient(nazwisko_k,imie_k,zawod_k)//początek konstruktora 
+  { 
+   this.nazwisko=nazwisko_k; 
+   this.imie=imie_k; 
+   this.zawod=zawod_k;   
+  }//koniec konstruktora 
+              klient.prototype.wypisz = function () //definicja metody 
+      { 
+         alert(this.nazwisko + ' ' + this.imie+ ' ' + this.zawod); 
+      }; 
+  var osoba1 = new klient("Kowalski", "Jan", "kierowca"); // nowy obiekt osoba1 
+  var osoba2 = new klient('Nowak', 'Anna', 'sekretarka'); 
+  osoba1.wypisz(); // uruchomienie metody wypisz() dotyczącej osoby 1 
+  osoba2.wypisz(); 
+                document.write("dostęp do właściwości"+"<br>"); 
+// poniżej dostęp do pól osoby1 
+     document.write("klient pierwszy"+"   "+osoba1.nazwisko+"   "+osoba1.imie+"   "+osoba1.zawod); 
+            </script> 
+     </head> 
+<body> 
+ <br> 
+   programowanie obiektowe   
+</body> 
+</html> 
+ 
+Przykład  
+Temat: Użycie Instrukcji prototype do utworzenia dodatkowej funkcjonalność, dla obiektu np String 
+czy Array. Tutaj: 
+ String.prototype.firstCapitalpierwsza litera duża 
+ String.prototype.mixLetterSizelitery nieparzyste małe, parzyste duże 
+String.prototype.firstCapital = function() { 
+    return this.charAt(0).toUpperCase() + this.substr(1); 
+ 55 
+} 
+ 
+function mixLetterSize() { 
+    var tekst = ''; 
+    for (var x=0; x<this.length; x++) { 
+        tekst += (x%2==0)?this.charAt(x).toUpperCase() : this.charAt(x).toLowerCase(); 
+    } 
+    return tekst; 
+} 
+String.prototype.mixLetterSize = mixLetterSize; 
+ 
+var text1 = "marcinek"; 
+console.log(text1.firstCapital()) //wypisze Marcinek 
+ 
+var text2 = "marcinek"; 
+console.log(text2.mixLetterSize()) //wypisze mArCiNeK 
+ 
+ 
+Przykład  
+Temat: Obiekty nadrzędne, kontekst obiektu. 
+ 
+Przypuśćmy, że mamy obiekt w obiekcie: 
+var SuperObjectClass = function() { 
+    this.name = 'Marcin'; 
+    this.height = 183 
+    this.button = null; 
+     
+    this.init = function() {         
+        this.button = document.createElement('input'); 
+        this.button.addEventListener('click', function() { 
+            this.value = this.height ??????? 
+        }); 
+        document.querySelector('body').appendChild(this.button); 
+    } 
+    this.init(); 
+} 
+ 
+var someObject = new SuperObjectClass(); 
+ 
+Po wywołaniu metody init tworzymy nowy guzik. Po jego kliknięciu powinien on ustawić swoje value 
+na height SuperObjectClass. Jak jednak to zrobić, skoro instrukcja this wewnątrz obiektu guzika 
+wskazuje na niego samego? 
+Są na to dwa sposoby: posłużenie się dodatkową zmienną that: 
+var SuperObjectClass = function() { 
+    this.name = 'Marcin'; 
+    this.height = 183 
+    this.button = null; 
+ 
+    this.init = function() { 
+        var that = this; 
+ 
+ 56 
+        this.button = document.createElement('input'); 
+        this.button.value = 'Kliknij'; 
+        this.button.type = 'button'; 
+        this.button.addEventListener('click', function() { 
+            alert('To jest ' + this.nodeName); //przycisk 
+            alert('Wzrost Marcina: ' + that.height); //obiekt SuperObiectClass 
+        }); 
+        document.querySelector('body').appendChild(this.button); 
+    } 
+    this.init(); 
+} 
+var someObject = new SuperObjectClass(); 
+ 
+lub skorzystanie z instrukcji bind(), za pomocą której możemy przekazać kontekst do danej funkcji: 
+ 
+var SuperObjectClass = function() { 
+    this.name = 'Marcin'; 
+    this.height = 183 
+    this.button = null; 
+ 
+    this.init = function() { 
+        this.button = document.createElement('input'); 
+        this.button.value = 'Kliknij'; 
+        this.button.type = 'button'; 
+        this.button.addEventListener('click', function(e) { 
+            //tutaj już this wskazuje na SuperObjectClass 
+            //dlatego dany przycisk musimy pobrac za pomocą e.target 
+            alert(e.target.value = this.height); 
+        }.bind(this)); 
+        document.querySelector('body').appendChild(this.button); 
+    } 
+    this.init(); 
+} 
+var someObject = new SuperObjectClass(); 
+Bardzo dużo osób neguje stosowanie dodatkowej zmiennej do przekazywania kontekstu obiektu. 
+Pamiętać należy jednak, że stosując instrukcję bind() zatracamy dostęp do this danego pod obiektu. 
+ 
+Przykład  
+Temat: Metoda Watch oraz Unwatch 
+ 
+Javascript udostępnia nam metodę: 
+watch("nazwaWlasciwosci", funkcja(id, staraWartosc, nowaWartosc),  
+która służy do podglądu właściwości obiektów. Jej działanie jest takie samo jak w innych językach. 
+Gdy podglądana wartość się zmieni, wówczas watch wywoła funkcję podaną w drugim atrybucie. 
+Przekazujemy jej 2 parametry - pierwszy określa nazwę obserwowanej właściwości, drugi to funkcja z 
+3 atrybutami: id, oldValue, newValue. Parametry te są wypełniane automatycznie. Gdy obserwowana 
+wartość się zmieni, funkcja podana w 2 atrybucie zostanie wywołana: 
+var obiekt = {p:1} 
+ 
+//śledzenie właściwości "p" obiektu "obiekt" 
+obiekt.watch("p", function (id, oldValue, newValue) { 
+console.log("o." + id + " zmieniło sie z " + oldValue + " na " + newValue) 
+return nowaWart; 
+}); 
+//teraz przy każdej zmianie wartości obiektu wywołany zostanie callback 
+//który śledzi zmiany w obiekcie 
+obiekt.p = 2 
+obiekt.p = 3 
+Aby zakończyć obserwowanie, korzystamy z metody unwatch("nazwa_obserwowanej_wlasciwości"). 
+obiekt.unwatch('p')
