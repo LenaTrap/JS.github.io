@@ -5,12 +5,11 @@
 <title>Programowanie obiektowe JS</title>
 
 <script type="text/javascript">
-
-function Klient(nazwisko_k, imie_k, zawód)
+function Klient(nazwisko_k, imie_k, zawod_k)
 {
-     this.nazwisko=nazwisko_k; 
-     this.imie=imie_k; 
-     this.zawod=zawod_k;  
+    this.nazwisko = nazwisko_k; 
+    this.imie = imie_k; 
+    this.zawod = zawod_k;  
 }
 
 Klient.prototype.wypisz = function()
@@ -18,7 +17,7 @@ Klient.prototype.wypisz = function()
     document.write(
         this.nazwisko + " " +
         this.imie + ", zawód: " +
-        this.zawód + " "
+        this.zawod + "<br>"
     );
 };
 
@@ -27,25 +26,14 @@ var osoba2 = new Klient("Ostrowska", "Julia", "Żółw ninja");
 var osoba3 = new Klient("DrzewoBarszcz", "Grzesiu", "Drzewo");
 
 document.write("<b>Dostęp do pól obiektów:</b><br>");
-document.write("klient pierwszy"+"   "+osoba1.nazwisko+"   "+osoba1.imie+"   "+osoba1.zawod)
-document.write("klient drugi"+"   "+osoba2.nazwisko+"   "+osoba2.imie+"   "+osoba2.zawod)
-document.write("klient trzeci"+"   "+osoba3.nazwisko+"   "+osoba3.imie+"   "+osoba3.zawod)
+document.write("klient pierwszy " + osoba1.nazwisko + " " + osoba1.imie + " " + osoba1.zawod + "<br>");
+document.write("klient drugi " + osoba2.nazwisko + " " + osoba2.imie + " " + osoba2.zawod + "<br>");
+document.write("klient trzeci " + osoba3.nazwisko + " " + osoba3.imie + " " + osoba3.zawod + "<br><br>");
 
 document.write("<b>Wyświetlanie danych metodą wypisz():</b><br>");
 osoba1.wypisz();
 osoba2.wypisz();
 osoba3.wypisz();
-
-
-osoba2.auto = "Ford";
-
-osoba2.osoba_pokaz_nazwisko_osoby = function()
-{
-    document.write("<br>Nazwisko osoby: " + this.nazwisko + "<br>");
-};
-
-osoba2.osoba_pokaz_nazwisko_osoby();
-
 </script>
 </head>
 
