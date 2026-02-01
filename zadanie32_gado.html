@@ -6,9 +6,6 @@
 
 <script type="text/javascript">
 
-/* ===============================
-   DEFINICJA KONSTRUKTORA
-   =============================== */
 function Klient(nazwisko_k, imie_k, zawód)
 {
      this.nazwisko=nazwisko_k; 
@@ -16,9 +13,6 @@ function Klient(nazwisko_k, imie_k, zawód)
      this.zawod=zawod_k;  
 }
 
-/* ===============================
-   METODA DODANA PRZEZ PROTOTYPE
-   =============================== */
 Klient.prototype.wypisz = function()
 {
     document.write(
@@ -28,45 +22,28 @@ Klient.prototype.wypisz = function()
     );
 };
 
-/* ===============================
-   POWOŁANIE OBIEKTÓW
-   =============================== */
 var osoba1 = new Klient("Gadomska", "Lena", "Uczeń");
 var osoba2 = new Klient("Ostrowska", "Julia", "Żółw ninja");
 var osoba3 = new Klient("DrzewoBarszcz", "Grzesiu", "Drzewo");
 
-/* ===============================
-   DOSTĘP DO WŁAŚCIWOŚCI
-   =============================== */
 document.write("<b>Dostęp do pól obiektów:</b><br>");
 document.write("klient pierwszy"+"   "+osoba1.nazwisko+"   "+osoba1.imie+"   "+osoba1.zawod)
 document.write("klient drugi"+"   "+osoba2.nazwisko+"   "+osoba2.imie+"   "+osoba2.zawod)
 document.write("klient trzeci"+"   "+osoba3.nazwisko+"   "+osoba3.imie+"   "+osoba3.zawod)
 
-/* ===============================
-   UŻYCIE METODY PROTOTYPOWEJ
-   =============================== */
 document.write("<b>Wyświetlanie danych metodą wypisz():</b><br>");
 osoba1.wypisz();
 osoba2.wypisz();
 osoba3.wypisz();
 
-/* ===============================
-   DODANIE WŁAŚCIWOŚCI POZA CIAŁEM OBIEKTU
-   =============================== */
+
 osoba2.auto = "Ford";
 
-/* ===============================
-   DODANIE METODY POZA CIAŁEM OBIEKTU
-   =============================== */
 osoba2.osoba_pokaz_nazwisko_osoby = function()
 {
     document.write("<br>Nazwisko osoby: " + this.nazwisko + "<br>");
 };
 
-/* ===============================
-   UŻYCIE DODANEJ METODY
-   =============================== */
 osoba2.osoba_pokaz_nazwisko_osoby();
 
 </script>
