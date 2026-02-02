@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <META HTTP-EQUIV="content-type" CONTENT="text/html">
+    <meta charset="utf-8">
+</head>
+<body>
+    <textarea cols="120" rows="43">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Programowanie obiektowe JS</title>
+
+<script type="text/javascript">
+function Klient(nazwisko_k, imie_k, zawod_k)
+{
+    this.nazwisko = nazwisko_k; 
+    this.imie = imie_k; 
+    this.zawod = zawod_k;  
+}
+
+Klient.prototype.wypisz = function()
+{
+    document.write(
+        this.nazwisko + " " +
+        this.imie + ", zawód: " +
+        this.zawod + "<br>"
+    );
+};
+
+var osoba1 = new Klient("Gadomska", "Lena", "Uczeń");
+var osoba2 = new Klient("Ostrowska", "Julia", "Żółw ninja");
+var osoba3 = new Klient("DrzewoBarszcz", "Grzesiu", "Drzewo");
+
+document.write("<b>Dostęp do pól obiektów:</b><br>");
+document.write("klient pierwszy " + osoba1.nazwisko + " " + osoba1.imie + " " + osoba1.zawod + "<br>");
+document.write("klient drugi " + osoba2.nazwisko + " " + osoba2.imie + " " + osoba2.zawod + "<br>");
+document.write("klient trzeci " + osoba3.nazwisko + " " + osoba3.imie + " " + osoba3.zawod + "<br><br>");
+
+document.write("<b>Wyświetlanie danych metodą wypisz():</b><br>");
+osoba1.wypisz();
+osoba2.wypisz();
+osoba3.wypisz();
+</script>
+</head>
+
+<body>
+<br>
+</body>
+</html>
+    </textarea>
+</body>
+</html>
