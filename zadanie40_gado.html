@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie40 – Gadomska 3f1</title>
+</head>
+<body>
+
+<h1>PROSTE DZIAŁANIA</h1>
+
+<h2>Gadomska klasa 3F1</h2>
+
+<label for="a">Podaj pierwszą liczbę:</label>
+<input type="number" id="a"><br><br>
+
+<label for="b">Podaj drugą liczbę:</label>
+<input type="number" id="b"><br><br>
+
+<input type="button" value="DODAWANIE" onclick="suma_gad()">
+<input type="button" value="ODEJMOWANIE" onclick="roznica_gad()">
+<input type="button" value="MNOŻENIE" onclick="iloczyn_gad()">
+<input type="button" value="DZIELENIE" onclick="iloraz_gad()">
+<input type="button" value="TEORIA-Gadomska" onclick="teoria_gad()">
+
+<div id="wynik" style="margin-top: 20px; font-size: 20px;"></div>
+
+<script>
+
+function suma_gad() {
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+
+    if (a === "" || b === "") {
+        document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+        return;
+    }
+
+    a = parseFloat(a);
+    b = parseFloat(b);
+
+    let wynik = (a + b).toFixed(2);
+    document.getElementById("wynik").innerHTML =
+        "Wynik działania wynosi: " + wynik;
+}
+
+function roznica_gad() {
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+
+    if (a === "" || b === "") {
+        document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+        return;
+    }
+
+    a = parseFloat(a);
+    b = parseFloat(b);
+
+    let wynik = (a - b).toFixed(2);
+    document.getElementById("wynik").innerHTML =
+        "Wynik działania wynosi: " + wynik;
+}
+
+function iloczyn_gad() {
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+
+    if (a === "" || b === "") {
+        document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+        return;
+    }
+
+    a = parseFloat(a);
+    b = parseFloat(b);
+
+    let wynik = (a * b).toFixed(2);
+    document.getElementById("wynik").innerHTML =
+        "Wynik działania wynosi: " + wynik;
+}
+
+function iloraz_gad() {
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+
+    if (a === "" || b === "") {
+        document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+        return;
+    }
+
+    a = parseFloat(a);
+    b = parseFloat(b);
+
+    if (b == 0) {
+        document.getElementById("wynik").innerHTML = "Nie wolno dzielić przez zero.";
+        return;
+    }
+
+    let wynik = (a / b).toFixed(2);
+    document.getElementById("wynik").innerHTML =
+        "Wynik działania wynosi: " + wynik;
+}
+
+function teoria_gad() {
+    document.write("<h2>Teoria – Gadomska 3F1</h2>");
+
+    document.write("<font color=green size=4>Pierwsza linia kodu</font><br>");
+    document.write("<font color=red size=4>&lt;label for=&quot;a&quot;&gt;Podaj pierwszą liczbę:&lt;/label&gt; &lt;input type=&quot;number&quot; id=&quot;a&quot;&gt;</font><br>");
+    document.write("<font color=green size=4>Wyjaśnienie:</font><br>");
+    document.write("<font color=red size=4>Tworzy etykietę oraz pole liczbowego formularza.</font><br><br>");
+
+    document.write("<font color=green size=4>Druga linia kodu</font><br>");
+    document.write("<font color=red size=4>&lt;input type=&quot;button&quot; value=&quot;DODAWANIE&quot; onclick=&quot;suma()&quot;&gt;</font><br>");
+    document.write("<font color=green size=4>Wyjaśnienie:</font><br>");
+    document.write("<font color=red size=4>Tworzy przycisk, który po kliknięciu uruchamia funkcję suma().</font><br><br>");
+
+    document.write("<font color=green size=4>Trzecia linia kodu</font><br>");
+    document.write("<font color=red size=4>var a = document.getElementById(&quot;a&quot;).value;</font><br>");
+    document.write("<font color=green size=4>Wyjaśnienie:</font><br>");
+    document.write("<font color=red size=4>Pobiera wartość z pola input o identyfikatorze 'a'.</font><br><br>");
+  
+    document.write("<font color=green size=4>Czwarta linia kodu</font><br>");
+    document.write("<font color=red size=4>if (a == &quot;&quot; || b == &quot;&quot;)</font><br>");
+    document.write("<font color=green size=4>Wyjaśnienie:</font><br>");
+    document.write("<font color=red size=4>Sprawdza, czy pola są puste.</font><br><br>");
+
+    document.write("<font color=green size=4>Piąta linia kodu</font><br>");
+    document.write("<font color=red size=4>document.getElementById(&quot;wynik&quot;).innerHTML = &quot;Wynik działania wynosi: &quot; + suma;</font><br>");
+    document.write("<font color=green size=4>Wyjaśnienie:</font><br>");
+    document.write("<font color=red size=4>Wyświetla wynik działania na stronie.</font><br><br>");
+}
+
+</script>
+</body>
+</html>
