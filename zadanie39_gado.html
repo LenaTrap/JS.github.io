@@ -1,18 +1,39 @@
-<!DOCTYPE html> 
-<head> 
-<meta charset="utf-8"> 
-</head> 
-  <body>
-    <input type="button" name="nazwisko_ucznia" value="Oblicz" onclick="fun_kow()" />
-      <script>
-        function fun_kow() {
-          var x_kow = prompt("Podaj kolor", "");
-          if(x_kow == 1 || x_???.toLowerCase() == "czerwony") {
-            document.write('<h1 style="color:???;">wczytałeś kolor ?????</h1><br />'); }
-          else if(x_kow == 2 || x_???.toLowerCase() == "????????????") {
-            document.write('<h6 style="?????????????;">wczytałeś kolor ??????</h6><br />');
-          }
-          }
-      </script>
-  </body>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="UTF-8">
+ <title>Gadomska Z39</title>
+</head>
+<body>
+
+<!-- MENU -->
+<h2 style="color:green;">MENU:</h2>
+<div style="color:red; font-size:22px;">1 - CZERWONY</div>
+<div style="color:blue; font-size:22px;">2 - NIEBIESKI</div>
+<br>
+
+<!-- Pole + przycisk jak na obrazku -->
+<input type="text" id="pole_gad" placeholder="Wpisz 1, 2 lub kolor">
+<input type="button" value="Sprawdź" onclick="fun_gad()">
+
+<script>
+function fun_gad() {
+
+    var opcja_dana_gad = document.getElementById("pole_gad").value;
+    opcja_dana_gad = opcja_dana_gad.toLowerCase();
+
+    if(opcja_dana_gad == "1" || opcja_dana_gad == "czerwony") {
+        document.write('<h1 style="color:red; font-size:50px;">wczytałeś kolor czerwony</h1><br />');
+    }
+    else if(opcja_dana_gad == "2" || opcja_dana_gad == "niebieski") {
+        document.write('<h6 style="color:blue; font-size:20px;">wczytałeś kolor niebieski</h6><br />');
+    }
+    else {
+        document.write('<h2 style="color:black;">Nie rozpoznano koloru</h2>');
+    }
+}
+</script>
+
+</body>
 </html>
+<!-- Gadomska Z39 -->

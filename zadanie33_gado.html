@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Z33 Gadomska</title>
+</head>
+<body>
+ 
+<script>
+ 
+function User(email, haslo, avatar)
+{
+this.email = email;
+this.haslo = haslo;
+this.avatar = avatar;
+}
+ 
+var userListNar = new Array();
+ 
+function addUserGad(user)
+{
+userListGad.push(user);
+}
+ 
+function loginGad(email, haslo)
+{
+for(var i=0; i<userListGad.length; i++)
+{
+if(userListGad[i].email == email && userListGad[i].haslo == haslo)
+{
+return true;
+}
+}
+return false;
+}
+ 
+var u1 = new User("test@test.pl","1234","avatar.jpg");
+addUserGad(u1);
+ 
+var emailGad = prompt("Podaj email:");
+var hasloGad = prompt("Podaj hasło:");
+ 
+if(loginGad(emailGad, hasloGad))
+{
+document.write("<font color='green'>Zalogowano poprawnie</font>");
+}
+else
+{
+document.write("<font color='red'>Błędne dane</font>");
+}
+ 
+</script>
+ 
+<!-- Gadomska Z33 -->
+</body>
+</html>
