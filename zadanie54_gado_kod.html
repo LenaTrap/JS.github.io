@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <META HTTP-EQUIV="content-type" CONTENT="text/html">
+    <meta charset="utf-8">
+</head>
+<body>
+    <textarea cols="120" rows="35">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="UTF-8">
+ <title>Gadomska Z54</title>
+</head>
+<body>
+
+<script>
+// Obliczenie wymiarów
+var a_gad = (91 % 4) + 5;  // a = 3 + 5 = 8
+var b_gad = (92 % 6) + 20;  // b = 2 + 20 = 22
+
+document.write("<pre>");
+
+// Pętla 1 - górne poziome gwiazdki
+for (var j = 1; j <= b_gad; j++) {
+    document.write("*");
+}
+document.write("<br>");
+
+// Pętla 2 - środkowe wiersze (pionowe gwiazdki)
+for (var i = 1; i <= a_gad - 2; i++) {
+    document.write("*");
+    for (var k = 1; k <= b_gad - 2; k++) {
+        document.write("&nbsp;");
+    }
+    document.write("*<br>");
+}
+
+// Pętla 3 - dolne poziome gwiazdki
+for (var j = 1; j <= b_gad; j++) {
+    document.write("*");
+}
+document.write("<br>");
+
+document.write("</pre>");
+document.write("a=" + a_gad + ", b=" + b_gad);
+</script>
+
+</body>
+</html>
+<!-- Gadomska Z54 -->
+     </textarea>
+</body>
+</html>

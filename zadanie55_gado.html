@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="UTF-8">
+ <title>Gadomska Z55</title>
+</head>
+<body>
+
+<script>
+// Wczytanie wymiarów
+var a_gad = parseInt(prompt("Podaj a (wysokość)=", "5"), 10);
+var b_gad = parseInt(prompt("Podaj b (szerokość)=", "20"), 10);
+
+// Walidacja
+if (isNaN(a_gad) || a_gad < 1) a_gad = 1;
+if (isNaN(b_gad) || b_gad < 1) b_gad = 1;
+
+document.write("<pre>");
+
+// Pętla 1 - górne poziome gwiazdki
+for (var j = 1; j <= b_gad; j++) {
+    document.write("*");
+}
+document.write("<br>");
+
+// Pętla 2 - przygotowanie wiersza środkowego
+var wiersz_gad = "*";
+for (var i = 1; i <= (b_gad - 2); i++) {
+    wiersz_gad = wiersz_gad + "&nbsp;&nbsp;";
+}
+wiersz_gad = wiersz_gad + "*";
+
+// Pętla 3 - wyświetlenie przygotowanego wiersza
+for (var k = 1; k <= a_gad - 2; k++) {
+    document.write(wiersz_gad);
+    document.write("<br>");
+}
+
+// Pętla 4 - dolne poziome gwiazdki
+for (var j = 1; j <= b_gad; j++) {
+    document.write("*");
+}
+document.write("<br>");
+
+document.write("</pre>");
+</script>
+
+</body>
+</html>
