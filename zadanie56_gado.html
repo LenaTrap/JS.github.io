@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="UTF-8">
+ <title>Gadomska Z56</title>
+</head>
+<body>
+
+<script language="javascript">
+var imie = prompt("Podaj imię:", "");
+var nazwisko = prompt("Podaj nazwisko:", "");
+
+if (!imie) imie = "";
+if (!nazwisko) nazwisko = "";
+
+var dlugoscImienia = imie.replace(/\s+/g, "").length;
+var dlugoscNazwiska = nazwisko.replace(/\s+/g, "").length;
+
+var a_gad = (dlugoscNazwiska % 4) + 5;
+var b_gad = (dlugoscImienia % 6) + 20;
+
+document.write("<pre>");
+
+for (var j = 1; j <= b_gad; j++) {
+    document.write("*");
+}
+document.write("<br>");
+
+var wiersz_gad = "*";
+for (var i = 1; i <= (b_gad - 2); i++) {
+    wiersz_gad = wiersz_gad + "&nbsp;";
+}
+wiersz_gad = wiersz_gad + "*";
+
+for (var k = 1; k <= a_gad - 2; k++) {
+    document.write(wiersz_gad);
+    document.write("<br>");
+}
+
+for (var j = 1; j <= b_gad; j++) {
+    document.write("*");
+}
+document.write("<br>");
+
+document.write("</pre>");
+</script>
+
+</body>
+</html>
