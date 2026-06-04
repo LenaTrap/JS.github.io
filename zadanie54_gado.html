@@ -6,20 +6,17 @@
 </head>
 <body>
 
-<script>
-// Obliczenie wymiarów
-var a_gad = (91 % 4) + 5;  // a = 3 + 5 = 8
-var b_gad = (92 % 6) + 20;  // b = 2 + 20 = 22
+<script language="javascript">
+var a_gad = (91 % 4) + 5;  
+var b_gad = (92 % 6) + 20;  
 
 document.write("<pre>");
 
-// Pętla 1 - górne poziome gwiazdki
 for (var j = 1; j <= b_gad; j++) {
     document.write("*");
 }
 document.write("<br>");
 
-// Pętla 2 - środkowe wiersze (pionowe gwiazdki)
 for (var i = 1; i <= a_gad - 2; i++) {
     document.write("*");
     for (var k = 1; k <= b_gad - 2; k++) {
@@ -28,7 +25,6 @@ for (var i = 1; i <= a_gad - 2; i++) {
     document.write("*<br>");
 }
 
-// Pętla 3 - dolne poziome gwiazdki
 for (var j = 1; j <= b_gad; j++) {
     document.write("*");
 }
