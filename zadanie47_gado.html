@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Gadomska Z47</title>
+</head>
+<body>
+<h1>Silnia liczby</h1>
+<div style="color:green; font-size:20px;">Lena Gadomska klasa 3F1</div>
+<br>
+<label for="n">Podaj liczbę n:</label>
+<input type="number" id="n"><br><br>
+<input type="button" value="OBLICZ SILNIĘ" onclick="silnia_gad()">
+<input type="button" value="TEORIA" onclick="teoria_gad()">
+<div id="wynik" style="margin-top:20px; font-size:22px;"></div>
+<script>
+function silnia_gad() {
+    var n = document.getElementById("n").value;
+
+    if (n === "") {
+        document.getElementById("wynik").innerHTML = "Proszę podać liczbę.";
+        return;
+    }
+
+    n = parseInt(n, 10);
+
+    if (n < 0) {
+        document.getElementById("wynik").innerHTML = "Silnię można obliczyć tylko dla liczb nieujemnych.";
+        return;
+    }
+
+    var wynik = 1;
+    for (var i = 1; i <= n; i++) {
+        wynik *= i;
+    }
+
+    document.getElementById("wynik").innerHTML = "Silnia liczby " + n + " wynosi: " + wynik;
+}
+
+function teoria_gad() {
+    document.write("<h2>Teoria — Silnia</h2>");
+    document.write("<p>Silnia n to iloczyn wszystkich liczb od 1 do n.</p>");
+    document.write("<font color=red>for (var i = 1; i <= n; i++)</font><br>");
+    document.write("<font color=green>Pętla dodaje kolejny czynnik do obliczenia silni.</font><br><br>");
+    document.write("<font color=red>wynik *= i;</font><br>");
+    document.write("<font color=green>Mnoży aktualną wartość silni przez kolejną liczbę.</font><br>");
+}
+</script>
+</body>
+</html>
+<!-- Gadomska Z47 -->

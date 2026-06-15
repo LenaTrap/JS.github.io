@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Gadomska Z42</title>
+</head>
+<body>
+<h1>Porównanie liczb</h1>
+<div style="color:green; font-size:20px;">Lena Gadomska klasa 3F1</div>
+<br>
+<label for="a">Podaj pierwszą liczbę:</label>
+<input type="number" id="a"><br><br>
+<label for="b">Podaj drugą liczbę:</label>
+<input type="number" id="b"><br><br>
+<input type="button" value="PORÓWNAJ" onclick="porownaj_gad()">
+<input type="button" value="TEORIA" onclick="teoria_gad()">
+<div id="wynik" style="margin-top:20px; font-size:22px;"></div>
+<script>
+function porownaj_gad() {
+    var a = document.getElementById("a").value;
+    var b = document.getElementById("b").value;
+
+    if (a === "" || b === "") {
+        document.getElementById("wynik").innerHTML = "Proszę podać obie liczby.";
+        return;
+    }
+
+    a = parseFloat(a);
+    b = parseFloat(b);
+
+    if (a > b) {
+        document.getElementById("wynik").innerHTML = "Pierwsza liczba jest większa od drugiej.";
+    } else if (a < b) {
+        document.getElementById("wynik").innerHTML = "Druga liczba jest większa od pierwszej.";
+    } else {
+        document.getElementById("wynik").innerHTML = "Obie liczby są równe.";
+    }
+}
+
+function teoria_gad() {
+    document.write("<h2>Teoria — Porównanie liczb</h2>");
+    document.write("<p>Program wczytuje dwie liczby i porównuje je.</p>");
+    document.write("<font color=red>if (a &gt; b)</font><br>");
+    document.write("<font color=green>Sprawdza, czy pierwsza liczba jest większa od drugiej.</font><br><br>");
+    document.write("<font color=red>else if (a &lt; b)</font><br>");
+    document.write("<font color=green>Sprawdza, czy druga liczba jest większa.</font><br><br>");
+    document.write("<font color=red>else</font><br>");
+    document.write("<font color=green>Wykonuje się, gdy liczby są równe.</font><br>");
+}
+</script>
+</body>
+</html>
+<!-- Gadomska Z42 -->

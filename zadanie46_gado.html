@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Gadomska Z46</title>
+</head>
+<body>
+<h1>Sprawdź rok przestępny</h1>
+<div style="color:green; font-size:20px;">Lena Gadomska klasa 3F1</div>
+<br>
+<label for="rok">Podaj rok:</label>
+<input type="number" id="rok"><br><br>
+<input type="button" value="SPRAWDŹ" onclick="sprawdz_rok_gad()">
+<input type="button" value="TEORIA" onclick="teoria_gad()">
+<div id="wynik" style="margin-top:20px; font-size:22px;"></div>
+<script>
+function sprawdz_rok_gad() {
+    var rok = document.getElementById("rok").value;
+
+    if (rok === "") {
+        document.getElementById("wynik").innerHTML = "Proszę podać rok.";
+        return;
+    }
+
+    rok = parseInt(rok, 10);
+
+    if ((rok % 4 === 0 && rok % 100 !== 0) || rok % 400 === 0) {
+        document.getElementById("wynik").innerHTML = "Rok jest przestępny.";
+    } else {
+        document.getElementById("wynik").innerHTML = "Rok nie jest przestępny.";
+    }
+}
+
+function teoria_gad() {
+    document.write("<h2>Teoria — Rok przestępny</h2>");
+    document.write("<p>Rok jest przestępny, gdy jest podzielny przez 4, ale nie przez 100, chyba że jest podzielny przez 400.</p>");
+    document.write("<font color=red>if ((rok % 4 === 0 && rok % 100 !== 0) || rok % 400 === 0)</font><br>");
+    document.write("<font color=green>Sprawdza warunek przestępnego roku.</font><br>");
+}
+</script>
+</body>
+</html>
+<!-- Gadomska Z46 -->

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <META HTTP-EQUIV="content-type" CONTENT="text/html">
+    <meta charset="utf-8">
+</head>
+<body>
+    <textarea cols="120" rows="70">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Gadomska Z45</title>
+</head>
+<body>
+<h1>Obwód i pole prostokąta</h1>
+<div style="color:green; font-size:20px;">Lena Gadomska klasa 3F1</div>
+<br>
+<label for="a">Podaj długość a:</label>
+<input type="number" id="a"><br><br>
+<label for="b">Podaj długość b:</label>
+<input type="number" id="b"><br><br>
+<input type="button" value="OBLICZ POLE" onclick="pole_prostokata_gad()">
+<input type="button" value="OBLICZ OBWÓD" onclick="obwod_prostokata_gad()">
+<input type="button" value="TEORIA" onclick="teoria_gad()">
+<div id="wynik" style="margin-top:20px; font-size:22px;"></div>
+<script>
+function pole_prostokata_gad() {
+    var a = document.getElementById("a").value;
+    var b = document.getElementById("b").value;
+
+    if (a === "" || b === "") {
+        document.getElementById("wynik").innerHTML = "Proszę podać obie długości.";
+        return;
+    }
+
+    a = parseFloat(a);
+    b = parseFloat(b);
+    var pole = a * b;
+    document.getElementById("wynik").innerHTML = "Pole prostokąta wynosi: " + pole;
+}
+
+function obwod_prostokata_gad() {
+    var a = document.getElementById("a").value;
+    var b = document.getElementById("b").value;
+
+    if (a === "" || b === "") {
+        document.getElementById("wynik").innerHTML = "Proszę podać obie długości.";
+        return;
+    }
+
+    a = parseFloat(a);
+    b = parseFloat(b);
+    var obwod = 2 * (a + b);
+    document.getElementById("wynik").innerHTML = "Obwód prostokąta wynosi: " + obwod;
+}
+
+function teoria_gad() {
+    document.write("<h2>Teoria — Pole i obwód prostokąta</h2>");
+    document.write("<p>Pole: a * b. Obwód: 2 * (a + b).</p>");
+    document.write("<font color=red>var pole = a * b;</font><br>");
+    document.write("<font color=green>Oblicza pole prostokąta.</font><br><br>");
+    document.write("<font color=red>var obwod = 2 * (a + b);</font><br>");
+    document.write("<font color=green>Oblicza obwód prostokąta.</font><br>");
+}
+</script>
+</body>
+</html>
+<!-- Gadomska Z45 -->
+     </textarea>
+</body>
+</html>

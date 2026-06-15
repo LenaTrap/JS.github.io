@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Gadomska Z43</title>
+</head>
+<body>
+<h1>Parzysta czy nieparzysta?</h1>
+<div style="color:green; font-size:20px;">Lena Gadomska klasa 3F1</div>
+<br>
+<label for="x">Podaj liczbę:</label>
+<input type="number" id="x"><br><br>
+<input type="button" value="SPRAWDŹ" onclick="sprawdz_parzystosc_gad()">
+<input type="button" value="TEORIA" onclick="teoria_gad()">
+<div id="wynik" style="margin-top:20px; font-size:22px;"></div>
+<script>
+function sprawdz_parzystosc_gad() {
+    var x = document.getElementById("x").value;
+
+    if (x === "") {
+        document.getElementById("wynik").innerHTML = "Proszę wpisać liczbę.";
+        return;
+    }
+
+    x = parseInt(x, 10);
+
+    if (x % 2 === 0) {
+        document.getElementById("wynik").innerHTML = "Liczba jest parzysta.";
+    } else {
+        document.getElementById("wynik").innerHTML = "Liczba jest nieparzysta.";
+    }
+}
+
+function teoria_gad() {
+    document.write("<h2>Teoria — Parzysta czy nieparzysta?</h2>");
+    document.write("<p>Dzielenie z resztą pozwala sprawdzić właściwości liczby.</p>");
+    document.write("<font color=red>if (x % 2 === 0)</font><br>");
+    document.write("<font color=green>Jeżeli reszta z dzielenia przez 2 wynosi 0, liczba jest parzysta.</font><br><br>");
+    document.write("<font color=red>else</font><br>");
+    document.write("<font color=green>W przeciwnym razie liczba jest nieparzysta.</font><br>");
+}
+</script>
+</body>
+</html>
+<!-- Gadomska Z43 -->
